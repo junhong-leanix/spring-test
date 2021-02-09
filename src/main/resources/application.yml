@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://${POSTGRES_HOST:dockerhost}:${POSTGRES_PORT:9712}/${POSTGRES_DATABASE:postgres}
+    url: jdbc:postgresql://${POSTGRES_HOST:dockerhost}:${POSTGRES_PORT:9712}/${POSTGRES_DATABASE:springtest}
     username: ${DB_USERNAME:postgres}
     password: ${DB_PASSWORD:}
     driverClassName: org.postgresql.Driver
