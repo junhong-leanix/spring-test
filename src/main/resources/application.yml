@@ -7,4 +7,4 @@ spring:
     platform: postgres
   liquibase:
     change-log: classpath:db/changelog/migrations.xml
-    enabled: ${COLD_BOOT:true}
+    enabled: ${COLD_BOOT:false}
