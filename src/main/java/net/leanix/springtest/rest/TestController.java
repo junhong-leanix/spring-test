@@ -2,11 +2,13 @@ package net.leanix.springtest.rest;
 
 import net.leanix.springtest.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@Validated
 public class TestController {
 
     @Autowired
