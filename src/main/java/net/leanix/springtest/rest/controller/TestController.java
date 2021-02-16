@@ -21,7 +21,7 @@ public class TestController {
     }
 
     @GetMapping("/testFilter")
-    public String sayHello(CustomPrincipal principal) {
+    public String sayHello2(CustomPrincipal principal) {
         return String.format("Hello %s!", principal.getName());
     }
 }
