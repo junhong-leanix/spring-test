@@ -6,3 +6,5 @@ services:
       - "9712:5432"
     volumes:
       - integration-api-data:/var/lib/postgresql/data
+volumes:
+  integration-api-data:
