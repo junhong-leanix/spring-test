@@ -1,7 +1,7 @@
-package net.leanix.springtest.rest;
+package net.leanix.springtest.rest.controller;
 
-import net.leanix.springtest.TestService;
 import net.leanix.springtest.rest.TestFilter.CustomPrincipal;
+import net.leanix.springtest.services.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;

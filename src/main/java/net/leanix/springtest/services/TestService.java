@@ -1,4 +1,4 @@
-package net.leanix.springtest;
+package net.leanix.springtest.services;
 
 import net.leanix.springtest.dao.PersonDao;
 import org.springframework.beans.factory.annotation.Autowired;

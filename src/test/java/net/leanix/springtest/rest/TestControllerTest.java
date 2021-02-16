@@ -3,7 +3,8 @@ package net.leanix.springtest.rest;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 
-import net.leanix.springtest.TestService;
+import net.leanix.springtest.rest.controller.TestController;
+import net.leanix.springtest.services.TestService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
