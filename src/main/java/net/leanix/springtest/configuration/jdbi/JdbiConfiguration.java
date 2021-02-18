@@ -1,8 +1,7 @@
-package net.leanix.springtest.configuration;
+package net.leanix.springtest.configuration.jdbi;
 
 import java.util.List;
 import javax.sql.DataSource;
-import net.leanix.springtest.dao.PersonDao;
 import org.jdbi.v3.core.Jdbi;
 import org.jdbi.v3.core.mapper.RowMapper;
 import org.jdbi.v3.core.spi.JdbiPlugin;
@@ -28,9 +27,12 @@ public class JdbiConfiguration {
         return new SqlObjectPlugin();
     }
 
+    // If we do not use static here, Spring would report warning
     @Bean
-    public PersonDao personDao(Jdbi jdbi) {
-        return jdbi.onDemand(PersonDao.class);
+    public static JdbiScannerConfigurer jdbiScannerConfiguration() {
+        var config = new JdbiScannerConfigurer();
+        config.setBasePackage("net.leanix.springtest");
+        return config;
     }
 
 }

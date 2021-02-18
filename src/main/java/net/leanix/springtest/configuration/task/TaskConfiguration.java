@@ -1,4 +1,4 @@
-package net.leanix.springtest.configuration;
+package net.leanix.springtest.configuration.task;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.cloud.task.configuration.EnableTask;
