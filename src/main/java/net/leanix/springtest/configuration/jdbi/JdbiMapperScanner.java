@@ -50,7 +50,7 @@ public class JdbiMapperScanner extends ClassPathBeanDefinitionScanner {
      * that extends a markerInterface or/and those annotated with the annotationClass
      */
     public void registerFilters() {
-        addIncludeFilter(new AnnotationTypeFilter(JdbiDao.class));
+        addIncludeFilter(new AnnotationTypeFilter(this.annotationClass));
 
         // exclude package-info.java
         addExcludeFilter((metadataReader, metadataReaderFactory) -> {
@@ -68,7 +68,7 @@ public class JdbiMapperScanner extends ClassPathBeanDefinitionScanner {
         Set<BeanDefinitionHolder> beanDefinitions = super.doScan(basePackages);
 
         if (beanDefinitions.isEmpty()) {
-            LOGGER.warn("No MyBatis mapper was found in '" + Arrays.toString(basePackages)
+            LOGGER.warn("No JDBI dao was found in '" + Arrays.toString(basePackages)
                 + "' package. Please check your configuration.");
         } else {
             processBeanDefinitions(beanDefinitions);
@@ -95,7 +95,7 @@ public class JdbiMapperScanner extends ClassPathBeanDefinitionScanner {
                 + "' mapperInterface");
 
             // the mapper interface is the original class of the bean
-            // but, the actual class of the bean is MapperFactoryBean
+            // but, the actual class of the bean is JdbiDaoFactoryBean
             definition.getConstructorArgumentValues().addGenericArgumentValue(beanClassName); // issue #59
             definition.setBeanClass(this.daoFactoryBeanClass);
 
