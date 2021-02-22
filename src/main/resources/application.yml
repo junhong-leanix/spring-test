@@ -1,6 +1,4 @@
 spring:
-  main:
-    web-application-type: none
   datasource:
     url: jdbc:postgresql://${POSTGRES_HOST:dockerhost}:${POSTGRES_PORT:9712}/${POSTGRES_DATABASE:springtest}
     username: ${DB_USERNAME:postgres}
@@ -10,13 +8,18 @@ spring:
   liquibase:
     change-log: classpath:db/changelog/migrations.xml
     enabled: ${COLD_BOOT:false}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 ---
 spring:
   profiles: rest
-  main:
-    web-application-type: servlet
 ---
 spring:
+  main:
+    web-application-type: none
   profiles: task
   liquibase:
     enabled: false

@@ -22,6 +22,7 @@ This project tries to configure Spring to do everything we have in our Dropwizar
 - JDBI: with some techniques, we could make using JDBI way easier than in Dropwizard!
 - Dependency Injection: Spring is built for this, so not a problem;
 - Obtaining user object in resource method: can be done using `ServletRequestWrapper`;
+- Metrics/Health: provided by `spring-actuator`;
 
 Things not as good as what we are having in Dropwizard:
 
