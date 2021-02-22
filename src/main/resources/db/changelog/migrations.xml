@@ -11,4 +11,22 @@
         # directly after database creation                                                          #
         #############################################################################################-->
 
+    <changeSet id="001" author="jul">
+        <sql>
+            <comment>Allow usage for uuid column type</comment>
+            CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+        </sql>
+    </changeSet>
+
+    <changeSet id="002" author="jul">
+        <sql>
+            <comment>Create person table</comment>
+            CREATE TABLE person (
+            id uuid not null primary key default uuid_generate_v4(),
+            name text not null,
+            surname text not null
+            )
+        </sql>
+    </changeSet>
+
 </databaseChangeLog>
